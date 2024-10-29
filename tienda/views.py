@@ -7,7 +7,8 @@ from .carrito import Carrito
 # Create your views here.
 
 def index(request):
-    context = {}
+    macetas = Productos.objects.filter(id_tipo=4)
+    context = {'macetas' : macetas}
     return render(request, 'tienda/index.html', context)
 
 def contacto(request):

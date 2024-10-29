@@ -20,30 +20,18 @@
         <aside>
             <!-- logo de la pagina -->
             <header>
-                <h1 class="logo">SotiPlants</h1>
-                <img class="logo_imagen" src="{% static 'images/logo_imagen.png' %}" alt="">
+                <h1 class="logo">El Comilon</h1>
+                <img class="logo_imagen" src="{% static '\images\logocomilon.png' %}" alt="">
             </header>
             <!-- menu de navegacion en un aside -->
             <ul class="menu">
                 <li>
-                    <a href="{% url 'index' %}" class="btn btn-primary btn-lg active btn-general" role="button" aria-disabled="true"><i
-                            class="bi bi-hand-index-thumb-fill"></i>Inicio</a>
-                </li>
-                <li>
-                    <a href="{% url 'plantas' %}" class="btn btn-primary btn-lg enabled btn-general" role="button"
-                        aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Plantas</a>
-                </li>
-                <li>
-                    <a href="{% url 'macetas' %}" class="btn btn-primary btn-lg enabled btn-general" role="button"
-                        aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Macetas</a>
-                </li>
-                <li>
-                    <a href="{% url 'accesorios' %}" class="btn btn-primary btn-lg enabled btn-general" role="button"
-                        aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Accesorios</a>
-                </li>
-                <li>
                     <a href="{% url 'contacto' %}" class="btn btn-primary btn-lg enabled btn-general" role="button"
                         aria-disabled="true"><i class="bi bi-envelope"></i>Contacto</a>
+                </li>
+                <li>
+                    <a href="{% url 'index' %}" class="btn btn-primary btn-lg active btn-general" role="button"
+                        aria-disabled="true"><i class="bi bi-envelope"></i>Menu</a>
                 </li>
                 <li>
                     <a href="{% url 'carrito' %}" class="btn btn-primary btn-lg enabled btn-general" role="button"
@@ -51,60 +39,24 @@
                 </li>
             </ul>
             <footer>
-                <p class="texto-footer">©SotiPlants</p>
+                <p class="texto-footer">©ElComilon</p>
             </footer>
         </aside>
         <!-- main que contiene las distintas vistas -->
         <main>
-            <h2 class="titulo-principal">Sobre Nosotros</h2>
-            <p class="iniciotext">En SotiPlants, nos dedicamos a proporcionarte una experiencia única en el mundo de las
-                plantas.
-                Desde exóticas suculentas hasta elegantes helechos, nuestra colección ofrece una variedad
-                de opciones para satisfacer tus necesidades de decoración y regalo. Con un enfoque en la
-                calidad, el servicio al cliente y la sostenibilidad, SotiPlants es tu destino confiable
-                para llevar la frescura y la vitalidad de la naturaleza a tu hogar u oficina.
-                Explora nuestra selección en línea o visítanos hoy para comenzar tu viaje hacia un entorno
-                más verde y armonioso. ¡SotiPlants, donde la belleza y la naturaleza se unen para crear espacios
-                encantadores y revitalizantes!
-            </p>
-            <!-- carrusel implementado -->
-            <div class="swiper mySwiper-1">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="header-info">
-                            <div class="header-txt">
-                                <h3>Nuestra Tienda Física</h3>
-                            </div>
-                            <div class="header-img">
-                                <img src="{% static 'images/tienda_fisica.jpg' %}" alt="">
-                            </div>
+            <h3>Menu De Platos</h3>
+            <div class="contenedor-productos">
+                {% for maceta in macetas %}
+                    <div class="productos">
+                        <img class="producto-imagen" src="{{ maceta.foto.url }}" alt="{{ maceta.nombre }}">
+                        <div class="producto-detalles">
+                            <h4 class="producto-titulo">{{ maceta.nombre_producto }}</h4>
+                            <p class="producto-precio">${{ maceta.precio }}</p>
+                            <a href="{% url 'Add' maceta.id_produ %}" class="btn btn-primary btn-agregar-carrito">Agregar al Carrito</a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="header-info">
-                            <div class="header-txt">
-                                <h3>Tenemos lo que deseas</h3>
-                            </div>
-                            <div class="header-img">
-                                <img src="{% static 'images/conjunto_plantas.jpg' %}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="header-info">
-                            <div class="header-txt">
-                                <h3>Decora con Sotiplants</h3>
-                            </div>
-                            <div class="header-img">
-                                <img src="{% static 'images/platassimples.jpg' %}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-            </div>
+                {% endfor %}
+            </div>            
         </main>
     </div>
     <!-- selector de temas fuera de demas etiquetas para evitar errores -->

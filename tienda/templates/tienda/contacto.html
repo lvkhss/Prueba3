@@ -20,31 +20,22 @@
     <div class="wrapper">
         <aside>
             <header>
-                <h1 class="logo">SotiPlants</h1>
-                <img class="logo_imagen" src="{% static 'images/logo_imagen.png' %}" alt="">
+                <h1 class="logo">El Comilon</h1>
+                <img class="logo_imagen" src="{% static '\images\logocomilon.png' %}" alt="">
             </header>
             <nav>
                 <ul class="menu">
-                    <li>
-                        <a href="{% url 'index' %}" class="btn btn-primary btn-lg enabled btn-general" role="button" aria-disabled="true"><i
-                                class="bi bi-hand-index-thumb-fill"></i>Inicio</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'plantas' %}" class="btn btn-primary btn-lg enabled btn-general" role="button"
-                            aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Plantas</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'macetas' %}" class="btn btn-primary btn-lg enabled btn-general" role="button"
-                            aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Macetas</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'accesorios' %}" class="btn btn-primary btn-lg enabled btn-general" role="button"
-                            aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Accesorios</a>
-                    </li>
+                    
                     <li>
                         <a href="{% url 'contacto' %}" class="btn btn-primary btn-lg active btn-general" role="button"
                             aria-disabled="true"><i class="bi bi-envelope"></i>Contacto</a>
                     </li>
+                    <li>
+                        <a href="{% url 'index' %}" class="btn btn-primary btn-lg active btn-general" role="button"
+                            aria-disabled="true"><i class="bi bi-envelope"></i>Menu</a>
+                    </li>
+                    <li>
+
                     <li>
                         <a href="{% url 'carrito' %}" class="btn btn-primary btn-lg enabled btn-general" role="button"
                             aria-disabled="true" id="btn-carrito"><i class="bi bi-basket"></i>Carrito</a>
@@ -52,7 +43,7 @@
                 </ul>
             </nav>
             <footer>
-                <p class="texto-footer">©SotiPlants</p>
+                <p class="texto-footer">©ElComilon</p>
             </footer>
         </aside>
         <main>

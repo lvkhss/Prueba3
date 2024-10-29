@@ -19,22 +19,26 @@
     <div class="wrapper">
         <aside>
             <header>
-                <h1 class="logo">SotiPlants</h1>
-                <img class="logo_imagen" src="{% static 'images/logo_imagen.png' %}" alt="">
+                <h1 class="logo">El Comilon</h1>
+                <img class="logo_imagen" src="{% static '\images\logocomilon.png' %}" alt="">
             </header>
-                <ul class="menu">
-                    <li>
-                        <a href="{% url 'index' %}" class="btn btn-primary btn-lg enabled btn-general" role="button"
-                            aria-disabled="true" id="btn-volver"><i class="bi bi-arrow-return-left"></i></i>Seguir Comprando</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'carrito' %}" class="btn btn-primary btn-lg active btn-general" role="button"
-                            aria-disabled="true" id="btn-carrito2"><i class="bi bi-basket"></i>Carrito</a>
-                    </li>
-                </ul>
+            <ul class="menu">
+                <li>
+                    <a href="{% url 'contacto' %}" class="btn btn-primary btn-lg enabled btn-general" role="button"
+                        aria-disabled="true"><i class="bi bi-envelope"></i>Contacto</a>
+                </li>
+                <li>
+                    <a href="{% url 'index' %}" class="btn btn-primary btn-lg active btn-general" role="button"
+                        aria-disabled="true"><i class="bi bi-envelope"></i>Menu</a>
+                </li>
+                <li>
+                    <a href="{% url 'carrito' %}" class="btn btn-primary btn-lg enabled btn-general" role="button"
+                        aria-disabled="true" id="btn-carrito"><i class="bi bi-basket"></i>Carrito</a>
+                </li>
+            </ul>
             </nav>
             <footer>
-                <p class="texto-footer">©SotiPlants</p>
+                <p class="texto-footer">©ElComilon</p>
             </footer>
         </aside>
         <main>
